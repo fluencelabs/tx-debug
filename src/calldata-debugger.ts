@@ -20,16 +20,16 @@ export const debugByData = async (rpc: string) => {
       type: 'text',
       name: '_to',
       message: 'To address',
-      initial: '0x7B90337f65fAA2B2B8ed583ba1Ba6EB0C9D7eA44',
+      initial: '0xb0f7AceA17aE7892B0432e89E467f55f57B76Cef',
     },
     {
       type: 'text',
       name: '_data',
       message: 'Calldata',
-      initial: '0x06fdde03',
+      initial: '0x92163b4b',
     },
   ]);
-  console.log({ _from, _to, _data });
+  // console.log({ _from, _to, _data });
   const cmd = command(_from, _to, _data, rpc);
   console.log("Tracing with cast...");
   const result = await execCommand(cmd);
