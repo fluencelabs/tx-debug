@@ -33,6 +33,6 @@ export const debugByData = async (rpc: string) => {
   const cmd = command(_from, _to, _data, rpc);
   console.log("Tracing with cast...");
   const result = await execCommand(cmd);
-  const resultByLines = removeColorSymbols(result).split('\n');
-  console.log(resultByLines)
+  // const resultByLines = removeColorSymbols(result).split('\n');
+  console.log(removeColorSymbols(result));
 }

@@ -13,8 +13,8 @@ const main = async () => {
       name: '_type',
       message: 'Debug type',
       choices: [
-        { title: 'Existing transaction', value: DebugType.TX },
         { title: 'From/to/calldata', value: DebugType.CALLDATA },
+        { title: 'Replay transaction', value: DebugType.TX },
       ],
     },
     {
