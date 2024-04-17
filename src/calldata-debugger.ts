@@ -1,5 +1,4 @@
 import prompts from "prompts";
-import { Chains } from "./constants";
 import { execCommand } from "./exec-cast";
 import { removeColorSymbols } from "./helpers";
 
