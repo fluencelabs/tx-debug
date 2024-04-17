@@ -1,6 +1,6 @@
 {
-  "name": "crystalbit-debugger",
-  "version": "1.0.3",
+  "name": "fluence-debugger",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,6 +20,6 @@
     "typescript": "^5.4.5"
   },
   "bin": {
-    "crystalbit-debugger": "dist/index.js"
+    "fluence-debugger": "dist/index.js"
   }
 }
