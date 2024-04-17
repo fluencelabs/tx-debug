@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import prompts, { prompt } from "prompts";
 import { Chains, DebugType, RPCS } from "./constants";
 import { debugByData } from "./calldata-debugger";
