@@ -15,6 +15,9 @@
   "dependencies": {
     "@types/node": "^20.12.7",
     "@types/prompts": "^2.4.9",
+    "axios": "^1.7.2",
+    "console-accordion": "^1.0.3",
+    "flbot": "^1.0.8",
     "prompts": "^2.4.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"

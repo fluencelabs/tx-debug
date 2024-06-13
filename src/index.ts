@@ -4,6 +4,7 @@ import prompts, { prompt } from "prompts";
 import { Chains, DebugType, RPCS } from "./constants";
 import { debugByData } from "./calldata-debugger";
 import { debugByTx } from "./run-debugger";
+import { forkDebug } from "./fork-debug";
 
 
 const main = async () => {
@@ -14,6 +15,7 @@ const main = async () => {
       message: 'Debug type',
       choices: [
         { title: 'From/to/calldata', value: DebugType.CALLDATA },
+        { title: 'Experimental', value: DebugType.EXPERIMENTAL },
         { title: 'Replay transaction', value: DebugType.TX },
       ],
     },
@@ -26,6 +28,7 @@ const main = async () => {
         { title: Chains.DAR, value: Chains.DAR },
         { title: Chains.FILECOIN, value: Chains.FILECOIN },
         { title: Chains.CALIBRATION, value: Chains.CALIBRATION },
+        { title: Chains.ETHEREUM, value: Chains.ETHEREUM },
         { title: Chains.OTHER, value: Chains.OTHER },
       ],
     },
@@ -45,6 +48,8 @@ const main = async () => {
     await debugByTx(_rpc);
   } else if (_type === DebugType.CALLDATA) {
     await debugByData(_rpc);
+  } else if (_type === DebugType.EXPERIMENTAL) {
+    await forkDebug(_rpc);
   }
 };
 
