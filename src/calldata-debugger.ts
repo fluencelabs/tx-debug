@@ -2,14 +2,14 @@ import prompts from "prompts";
 import { execCommand } from "./exec-cast";
 import { removeColorSymbols } from "./helpers";
 
-const command = (from: string, to: string, data: string, rpc: string) => {
-  return `cast call ${to} --from ${from} --data ${data} --trace --rpc-url ${rpc}`;
+const command = (from: string, to: string, data: string, value: string, rpc: string) => {
+  return `cast call ${to} --from ${from} --data ${data} --value 0x${parseInt(value)} --trace --rpc-url ${rpc}`;
 };
 
 
 export const debugByData = async (rpc: string) => {
   // request from address
-  const { _from, _to, _data } = await prompts([
+  const { _from, _to, _data, _value } = await prompts([
     {
       type: 'text',
       name: '_from',
@@ -28,9 +28,15 @@ export const debugByData = async (rpc: string) => {
       message: 'Calldata',
       initial: '0x92163b4b',
     },
+    {
+      type: 'text',
+      name: '_value',
+      message: 'Value',
+      initial: '0',
+    }
   ]);
   // console.log({ _from, _to, _data });
-  const cmd = command(_from, _to, _data, rpc);
+  const cmd = command(_from, _to, _data, _value, rpc);
   console.log("Tracing with cast...");
   const result = await execCommand(cmd);
   // const resultByLines = removeColorSymbols(result).split('\n');
