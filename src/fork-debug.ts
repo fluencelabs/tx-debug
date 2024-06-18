@@ -2,7 +2,7 @@ import axios from "axios";
 import { ChildProcessWithoutNullStreams, spawn } from "child_process";
 import { opImage } from "./ui";
 import { CALL, CALLCODE, DELEGATECALL, STATICCALL } from "./const";
-import { initSelectors } from "flbot";
+import { getOnlyFunction, initSelectors } from "flbot";
 import prompts from "prompts";
 import { AccordionData, showAccordion } from "console-accordion";
 
@@ -129,25 +129,25 @@ export const forkDebug = async (rpc: string) => {
         type: 'text',
         name: '_from',
         message: 'From address',
-        initial: '0x34612D67ba11E61118b0337931A45dD98A3C645e',
+        initial: '0xa83c890a9fb044f983774da9abf1b0cab19f66fd',
       },
       {
         type: 'text',
         name: '_to',
         message: 'To address',
-        initial: '0xb0f7AceA17aE7892B0432e89E467f55f57B76Cef',
+        initial: '0xb0f7acea17ae7892b0432e89e467f55f57b76cef',
       },
       {
         type: 'text',
         name: '_data',
         message: 'Calldata',
-        initial: '0x4ece5685636b121ada6c5ef8282a9e514ad31c4dcee394ecbe586ba0abb84de1dbcde66cba1682bd31419c71b471bf3debc105dd7f3dc9393b10f9582c02cdd3aa1acf6c0000106960d86160c9ac591aec4870123272f36dd9e44ac4484361be6f3a1b3f',
+        initial: '0x3d5f526c000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000012c04d4d52e23093f590391a810b7410ab5deb08b263dd240e7ac2db67594e4a8',
       },
       {
         type: 'text',
         name: '_value',
         message: 'Value',
-        initial: '0',
+        initial: '0x15ba9d9e9b4432000',
       }
     ]);
 
@@ -196,6 +196,9 @@ export const traceCall = async (
   const { failed, gas, returnValue, structLogs } = result;
   console.log({ failed, gas, returnValue });
   const accordionData: AccordionData = [];
+  const decodedReturn = getOnlyFunction(returnValue);
+  console.log({ decodedReturn })
+  if (1) process.exit(0);
   const accordionTitle = (short: boolean) => `
 Failed: ${failed}
 Gas: ${gas}

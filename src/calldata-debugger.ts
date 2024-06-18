@@ -3,7 +3,7 @@ import { execCommand } from "./exec-cast";
 import { removeColorSymbols } from "./helpers";
 
 const command = (from: string, to: string, data: string, value: string, rpc: string) => {
-  return `cast call ${to} --from ${from} --data ${data} --value 0x${parseInt(value)} --trace --rpc-url ${rpc}`;
+  return `cast call ${to} --from ${from} --data ${data} --value ${parseInt(value)} --trace --rpc-url ${rpc}`;
 };
 
 
