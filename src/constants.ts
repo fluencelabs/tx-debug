@@ -7,6 +7,7 @@ export enum DebugType {
 export enum Chains {
   KRAS = 'Kras',
   DAR = 'Dar',
+  STAGE = 'Stage',
   FILECOIN = 'Filecoin',
   CALIBRATION = 'Calibration',
   ETHEREUM = 'Ethereum',
@@ -16,6 +17,7 @@ export enum Chains {
 export const RPCS: Record<Chains, string> = {
   [Chains.KRAS]: 'https://ipc.kras.fluence.dev',
   [Chains.DAR]: 'https://ipc.dar.fluence.dev',
+  [Chains.STAGE]: 'https://ipc.stage.fluence.dev',
   [Chains.FILECOIN]: 'https://rpc.ankr.com/filecoin',
   [Chains.CALIBRATION]: 'https://rpc.ankr.com/filecoin_testnet',
   [Chains.ETHEREUM]: 'https://eth.llamarpc.com',

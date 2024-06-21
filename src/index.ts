@@ -26,6 +26,7 @@ const main = async () => {
       choices: [
         { title: Chains.KRAS, value: Chains.KRAS },
         { title: Chains.DAR, value: Chains.DAR },
+        { title: Chains.STAGE, value: Chains.STAGE },
         { title: Chains.FILECOIN, value: Chains.FILECOIN },
         { title: Chains.CALIBRATION, value: Chains.CALIBRATION },
         { title: Chains.ETHEREUM, value: Chains.ETHEREUM },
