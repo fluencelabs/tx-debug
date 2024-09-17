@@ -1,6 +1,6 @@
 {
   "name": "fluence-debugger",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,7 +17,7 @@
     "@types/prompts": "^2.4.9",
     "axios": "^1.7.2",
     "console-accordion": "^1.0.3",
-    "flbot": "^1.0.8",
+    "flbot": "^1.1.0",
     "prompts": "^2.4.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"

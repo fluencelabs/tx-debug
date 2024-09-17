@@ -5,21 +5,17 @@ export enum DebugType {
 };
 
 export enum Chains {
-  KRAS = 'Kras',
-  DAR = 'Dar',
-  STAGE = 'Stage',
-  FILECOIN = 'Filecoin',
-  CALIBRATION = 'Calibration',
+  FLUENCE = 'Fluence',
+  TESTNET = 'Fluence Testnet',
+  STAGE = 'Fluence Stage',
   ETHEREUM = 'Ethereum',
   OTHER = 'Other',
 };
 
 export const RPCS: Record<Chains, string> = {
-  [Chains.KRAS]: 'https://ipc.kras.fluence.dev',
-  [Chains.DAR]: 'https://ipc.dar.fluence.dev',
-  [Chains.STAGE]: 'https://ipc.stage.fluence.dev',
-  [Chains.FILECOIN]: 'https://rpc.ankr.com/filecoin',
-  [Chains.CALIBRATION]: 'https://rpc.ankr.com/filecoin_testnet',
+  [Chains.FLUENCE]: 'https://rpc.mainnet.fluence.dev',
+  [Chains.TESTNET]: 'https://rpc.testnet.fluence.dev',
+  [Chains.STAGE]: 'https://rpc.stage.fluence.dev',
   [Chains.ETHEREUM]: 'https://eth.llamarpc.com',
   [Chains.OTHER]: '',
 };

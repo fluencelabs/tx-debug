@@ -24,11 +24,9 @@ const main = async () => {
       name: '_chain',
       message: 'Select chain',
       choices: [
-        { title: Chains.KRAS, value: Chains.KRAS },
-        { title: Chains.DAR, value: Chains.DAR },
+        { title: Chains.FLUENCE, value: Chains.FLUENCE },
+        { title: Chains.TESTNET, value: Chains.TESTNET },
         { title: Chains.STAGE, value: Chains.STAGE },
-        { title: Chains.FILECOIN, value: Chains.FILECOIN },
-        { title: Chains.CALIBRATION, value: Chains.CALIBRATION },
         { title: Chains.ETHEREUM, value: Chains.ETHEREUM },
         { title: Chains.OTHER, value: Chains.OTHER },
       ],
